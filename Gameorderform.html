@@ -1,0 +1,225 @@
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Game Order Form</title>
+
+<body style="background-color: Gray">
+
+<style>
+	.center 
+	{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+	}
+</style>
+
+</br>
+
+<h1 style="color: red; text-align: center">Game Order Form</h1>
+
+<fieldset>
+      <center>
+         <form id = 'POST' method = 'post' action='pRoCeSsOrDeR.php'>
+            <div class="container-fluid">
+            <div class="row">
+            <div class="col-xs-6">
+               <input type="text" class="form-control" id="Name" placeholder="Name" name='Name'>
+            </div>
+            </br>
+            <select id="Game" name="Game">
+             <center>
+               <option value="Mario 64">Mario 64</option>
+               <option value="The Legend of Zelda: Ocarina Of Time">The Legend of Zelda: Ocarina Of Time</option>
+               <option value="The Legend of Zelda: Breath Of The Wild">The Legend of Zelda: Breath Of The Wild</option>
+               <option value="Sonic Forces">Sonic Forces</option>
+               <option value="Call of Duty Black Ops 4">Call of Duty Black Ops 4</option>
+               <option value="Lego: The Incredibles">Lego: The Incredibles</option>
+               <option value="Lego: Super Heroes">Lego: Super Heroes</option>
+               <option value="The Crew 2">The Crew 2</option>
+               <option value="Grand Theft Auto V">Grand Theft Auto V</option>
+               <option value="Fortnite">Fortnite</option>
+               <option value="Minecraft">Minecraft</option>
+               <option value="Minecraft Story">Minecraft Story</option>
+               <option value="Tomb Raider">Tomb Raider</option>
+               <option value="Assassins Creed: Black Flag">Assassins Creed: Black Flag</option>
+               <option value="TitanFall">TitanFall</option>
+               <option value="TitanFall 2">TitanFall 2</option>
+             </center>
+            </select>
+            </br>
+            </br>
+            <select id="Type" name="Type">
+               <option value="Disc">Disc</option>
+               <option value="Digital Download">Digital Download</option>
+            </select>
+            </br>
+            </br>
+            <input type="Submit" value="Submit" name="Submit" id="Submit"/>
+         </form>
+         <input type="button" value="Reset" onClick="window.location.reload()">
+      </center>
+<legend style="color: white; text-align: center">Your Order</legend>
+</fieldset>
+
+</br>
+</br>
+</br>
+
+<fieldset>
+      <center>
+      </center>
+<legend style="color: white; text-align: center">View Your Order</legend>
+</fieldset>
+
+</br>
+</br>
+</br>
+
+<fieldset>
+      <center>
+         <form id = 'DELETE' method = 'Delete' action='Delete.php'>
+            <div class="container-fluid">
+            <div class="row">
+            <div class="col-xs-6">
+               <input type="text" class="form-control" id="Delete Name" placeholder="Name" name='Delete Name'>
+            </div>
+            </br>
+            <select id="Delete Game" name="Delete Game">
+             <center>
+               <option value="Mario 64">Mario 64</option>
+               <option value="The Legend of Zelda: Ocarina Of Time">The Legend of Zelda: Ocarina Of Time</option>
+               <option value="The Legend of Zelda: Breath Of The Wild">The Legend of Zelda: Breath Of The Wild</option>
+               <option value="Sonic Forces">Sonic Forces</option>
+               <option value="Call of Duty Black Ops 4">Call of Duty Black Ops 4</option>
+               <option value="Lego: The Incredibles">Lego: The Incredibles</option>
+               <option value="Lego: Super Heroes">Lego: Super Heroes</option>
+               <option value="The Crew 2">The Crew 2</option>
+               <option value="Grand Theft Auto V">Grand Theft Auto V</option>
+               <option value="Fortnite">Fortnite</option>
+               <option value="Minecraft">Minecraft</option>
+               <option value="Minecraft Story">Minecraft Story</option>
+               <option value="Tomb Raider">Tomb Raider</option>
+               <option value="Assassins Creed: Black Flag">Assassins Creed: Black Flag</option>
+               <option value="TitanFall">TitanFall</option>
+               <option value="TitanFall 2">TitanFall 2</option>
+             </center>
+            </select>
+            </br>
+            </br>
+            <select id="Delete Type" name="Delete Type">
+               <option value="Disc">Disc</option>
+               <option value="Digital Download">Digital Download</option>
+            </select>
+            </br>
+            </br>
+            <input type="Submit" value="Submit" name="Submit" id="Submit"/>
+         </form>
+      </center>
+<legend style="color: white; text-align: center">Delete Your Order</legend>
+</fieldset>
+
+<style type="text/css">
+/*<![CDATA[*/
+
+#img {
+  width:300px;height:150px;
+}
+/*]]>*/
+</style></head>
+
+<body>
+<br /><br />
+<p style="text-align: center">
+<input type="button" name="" value="TL" onmouseup="M1.move('TL');" />
+<input type="button" name="" value="BR" onmouseup="M1.move('BR');" />
+</p>
+<center><img id="img" src="Gamestop logo.png" /></center>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+function Move(o){
+ var oop=this,img=document.getElementById(o.ImageID),br,tl,ms=o.Duration,c;
+ if (img){
+  c=document.createElement('IMG');
+  c.src=img.src;
+  c.style.position='fixed';
+  c.style.visibility='hidden';
+  br=c.cloneNode(false);
+  br.style.right='0px';
+  br.style.bottom='0px';
+  br.style.width=img.width+'px';
+  br.style.height=img.height+'px';
+  document.body.appendChild(br);
+  oop.BR=br;
+  tl=c.cloneNode(false);
+  tl.style.left='0px';
+  tl.style.top='0px';
+  tl.style.width=img.width+'px';
+  tl.style.height=img.height+'px';
+  document.body.appendChild(tl);
+  oop.TL=tl;
+  oop.img=img;
+  c.style.position='absolute';
+  c.style.zIndex='101';
+  c.style.left='-3000px';
+  c.style.top='-3000px';
+  c.style.width=img.width+'px';
+  c.style.height=img.height+'px';
+  oop.c=c;
+  document.body.appendChild(c);
+  oop.ms=ms;
+ }
+}
+
+Move.prototype={
+
+ move:function(s){
+  var oop=this,to=oop[s],p=oop.pos(oop.img);
+  if (to){
+   oop.img.style.visibility='hidden';
+   oop.c.style.visibility='visible';
+   to=oop.pos(to);
+   oop.animate('left',p[0],to[0],new Date(),oop.ms,s+'l');
+   oop.animate('top',p[1],to[1],new Date(),oop.ms,s+'t');
+  }
+ },
+ animate:function(mde,f,t,srt,mS,to){
+  var oop=this,ms=new Date().getTime()-srt,now=(t-f)/mS*ms+f;
+  if (isFinite(now)){
+   oop.c.style[mde]=now+'px';
+  }
+  if (ms<mS){
+   oop[to]=setTimeout(function(){ oop.animate(mde,f,t,srt,mS,to); },10);
+  }
+  else {
+   oop.c.style[mde]=t+'px';
+  }
+ },
+
+ pos:function(obj){
+  var rtn=[0,0];
+  while(obj){
+   rtn[0]+=obj.offsetLeft;
+   rtn[1]+=obj.offsetTop;
+   obj=obj.offsetParent;
+  }
+  return rtn;
+ }
+
+}
+
+M1=new Move({
+ ImageID:'img',
+ BRAnchorID:'br',
+ TLAnchorID:'tl',
+ Duration:1000
+});
+/*]]>*/
+</script>
+</body>
